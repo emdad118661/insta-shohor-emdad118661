@@ -53,6 +53,8 @@ const switchTab = (id) => {
 const createPost = (post) => {
   const image = post.image;
   const userImage = post.userImage;
+  const commentName = post.comments[0].user;
+  const comment = post.comments[0].text;
   const div = document.createElement("article");
   div.classList.add("post");
   div.innerHTML = `
@@ -120,9 +122,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${commentName}
                       </a>
-                      ${post.comments?.text}
+                      ${comment}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
